@@ -18,7 +18,7 @@ print("กำไร :", profit)
 boss_money = profit * 80 / 100
 left = profit - boss_money
 
-print("บอสได้อันดา :", boss_money)
+print("บอสอันดาได้ :", boss_money)
 print("เหลือ :", left)
 
 # ลูกน้อง
