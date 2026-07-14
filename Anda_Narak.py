@@ -1,40 +1,44 @@
-print("คำนวณกำไรค้าอาวุธเถื่อน")
-#จำนวณ
-quantity = int(input("จำนวนปืนที่รับมาขาย : "))
-cost_price = int(input("ต้นทุนของปืนที่รับมาต่อละกระบอก : "))
+print("คำนวณกำไร")
 
-#ราคาต้นทุนของปืนทั้งหมด
-total_cost = cost_price * quantity
-print("กำไร" , total_cost)
+quantity = int(input("จำนวนสินค้า : "))
+cost_price = int(input("ต้นทุนต่อชิ้น : "))
+sell_price = int(input("ราคาขายต่อชิ้น : "))
 
-#จะขายปืนเท่าไหร่
-sell_price= int(input("ราคาที่จะนำไปขายต่อ : "))
-Gumrai = sell_price*quantity
-print("ถ้าขายหมดในราคานี้จะได้เงินทั้งหมด" , Gumrai )
+# คำนวณ
+total_cost = quantity * cost_price
+total_sell = quantity * sell_price
+profit = total_sell - total_cost
 
-#Boss_Anda = 80%
-Boss_Anda = Gumrai *80 /100 
-print("บอสอันดาถือหุ้น80% แปลวาบอยจะได้เงินไป : " , Boss_Anda)
+print("----------------")
+print("ต้นทุนทั้งหมด :", total_cost)
+print("รายรับทั้งหมด :", total_sell)
+print("กำไร :", profit)
 
-#เหลือ
-Left = Gumrai - Boss_Anda 
-print("จะเหลือเงิน", Left)
-#team_members = 1% ต่อคน
-#ขี้ค่า
-team_members = int(input("จำนวนลูกน้องในทีมที่ไปทำงาน :"))
-team_money = Left *1 /100
-moneyReally = team_members*team_money
-if moneyReally > Left:
-    print("ไม่ต้องเอา")
+# แบ่งให้บอส
+boss_money = profit * 80 / 100
+left = profit - boss_money
+
+print("บอสได้อันดา :", boss_money)
+print("เหลือ :", left)
+
+# ลูกน้อง
+team_members = int(input("จำนวนลูกน้อง : "))
+
+team_money = left * 1 / 100
+all_team = team_money * team_members
+
+if all_team <= left:
+    print("ลูกน้องรวมได้ :", all_team)
+    print("ลูกน้องได้คนละ :", team_money)
 else:
-    print("ลูกน้องจะได้เงิน" ,moneyReally)
+    print("เงินไม่พอแบ่งให้ลูกน้อง")
+
+my_money = left - all_team
 
 
+print("------------------")
 print("สรุป")
 print("------------------")
 
-print("เงินกำไรของเราเหลือทั้งหมด กำไรสุทธิ :" , Left - moneyReally)
-print("ต้นทุน :" , total_cost)
-print("รายรับทั้งหมด: " ,Gumrai)
-print("จำนวนที่ให้บอสอันดา", Boss_Anda)
-print("จำนวนเงินที่ลูกน้องได้ต่อคน", team_money)
+print("----------------")
+print("กำไรสุทธิของเรา :", my_money)
