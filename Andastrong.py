@@ -1,0 +1,5 @@
+name = str(input("จำนวนปืนที่รับมาขาย : "))
+age = int(input("จำนวนปืนที่รับมาขาย : "))
+tall = int(input("จำนวนปืนที่รับมาขาย : "))
+Strong = int(input("จำนวนปืนที่รับมาขย : "))
+money = int(input("เงินติดตัว :")
